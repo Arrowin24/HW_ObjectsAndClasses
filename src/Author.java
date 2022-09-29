@@ -11,15 +11,22 @@ public class Author {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    //Реализация домашки по методам объекта
+    @Override
+    public String toString() {
+        return "Author name: " + name + " " + surname;
+    }
+
+    public boolean equals(Author author) {
+        return (name == author.getName() && surname == author.getSurname());
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name,surname);
     }
 }

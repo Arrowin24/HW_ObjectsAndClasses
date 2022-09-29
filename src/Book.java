@@ -24,4 +24,19 @@ public class Book {
     public void setYear(int year) {
         this.year = year;
     }
+
+    //Реализация домашки по методам объекта
+    @Override
+    public String toString() {
+        return "Book: " + name + ", year: "+year+", "  + author;
+    }
+
+    public boolean equals(Book book) {
+        return (name == book.getName() && year == book.year&&author==book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name,year,author);
+    }
 }
